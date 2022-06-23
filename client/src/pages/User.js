@@ -1,6 +1,12 @@
 import React from 'react';
+import axios from 'axios';
 
 function User() {
+  axios.get(`http://localhost:5050/api/users`).then((res) => {
+    const users = res.data;
+    console.log(users);
+  });
+
   return (
     <>
       <h1>This is the User Page</h1>

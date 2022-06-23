@@ -3,6 +3,7 @@
  */
 const express = require('express'); // Express framework
 const app = express(); // Express APP
+const cors = require('cors');
 require('dotenv').config(); // Environtment variables
 const mongoose = require('mongoose'); // MongoDB
 const userRouter = require('./routes/user'); // For user routes
@@ -30,6 +31,7 @@ connectDB();
  *  2. Create = Register, Read, Update, Delete
  */
 app.use(express.json()); // Express JSON
+app.use(cors());
 app.use('/api/users', userRouter);
 
 /**********************************************************************
