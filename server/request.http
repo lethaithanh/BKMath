@@ -28,13 +28,14 @@ POST http://localhost:5050/api/users
 Content-Type: application/json
 
 {
-  "lastname": "Le Thai Minh",
-  "firstname": "Nghia",
-  "email": "nghia@lethai.vn",
-  "password": "071086",
-  "avatar": "abcd",
-  "info": "1234",
-  "status": "INACTIVE"
+  "lastname": "Nguyen Hoang",
+  "firstname": "Phong",
+  "email": "phongnh@abc.com",
+  "password": "123456",
+  "role": "Student",
+  "avatar": "",
+  "info": "",
+  "status": "Active"
 }
 
 ###
@@ -49,10 +50,10 @@ Content-Type: application/json
   "password": "",
   "avatar": "thanh.png",
   "info": "Tel: 0989984858",
-  "status": "ACTIVE"
+  "status": "Active"
 }
 
 ###
 
-DELETE http://localhost:5050/api/users/62b333ec41b6dec5ad682092
+DELETE http://localhost:5050/api/users/62b4283c67ee02e7292ab046
 

@@ -116,7 +116,7 @@ router.post('/login', async (req, res) => {
  * @access: Private
  */
 router.post('/', async (req, res) => {
-  const { lastname, firstname, email, password, avatar, info, status } =
+  const { lastname, firstname, email, password, role, avatar, info, status } =
     req.body;
 
   if (!lastname || !firstname || !email || !password) {
@@ -140,9 +140,10 @@ router.post('/', async (req, res) => {
       firstname,
       email,
       password: hashedPassword,
+      role: role || 'Student',
       avatar: avatar || '',
       info: info || '',
-      status: status || 'ACTIVE',
+      status: status || 'Active',
     });
     await newUser.save();
     // Return token
@@ -214,18 +215,20 @@ router.put('/:id', async (req, res) => {
         firstname,
         email,
         password: hashedPassword,
+        role: role || 'Student',
         avatar: avatar || '',
         info: info || '',
-        status: status || 'ACTIVE',
+        status: status || 'Active',
       };
     } else {
       updatedUser = {
         lastname,
         firstname,
         email,
+        role: role || 'Student',
         avatar: avatar || '',
         info: info || '',
-        status: status || 'ACTIVE',
+        status: status || 'Active',
       };
     }
     const userUpdateCondition = { _id: req.params.id };
